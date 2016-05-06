@@ -1,13 +1,10 @@
 {
 
-
     "express": {
         "view cache": false,
         "view engine": "js",
         "views": "path:./.build/templates"
     },
-
-
 
     "view engines": {
         "js": {
@@ -29,8 +26,6 @@
         ]
     },
 
-
-
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
@@ -50,8 +45,6 @@
     },
 
     "middleware": {
-
-
         "makara": {
             "priority": 100,
             "enabled": true,
@@ -65,7 +58,6 @@
                 ]
             }
         },
-
 
         "static": {
             "module": {

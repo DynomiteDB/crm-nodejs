@@ -9,7 +9,8 @@ module.exports = function (router) {
         cache.get('name', function(err, reply) {
             var username;
 
-            if (err) return err;
+            // Switch to render a 503 page
+            if (err) console.log(err);
 
             if (reply) {
                 username = reply;

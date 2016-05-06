@@ -1,2 +1,7 @@
-# crm
-Example CRM application that uses the same API for database (DynomiteDB + RocksDB) and cache (DynomiteDB + Redis).
+# DynomiteDB CRM
+
+Example application build with DynomiteDB and KrakenJS (a Node.js framework from PayPal).
+
+- Database: DynomiteDB + LMDB
+- Cache: DynomiteDB + Redis
+

@@ -1,0 +1,18 @@
+{
+  "name": "crm",
+  "description": "DynomiteDB example application",
+  "main": "index.js",
+  "author": "Akbar S. Ahmed",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ]
+}

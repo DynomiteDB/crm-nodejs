@@ -1,6 +1,8 @@
 # IDE
 .idea
 
+*.html
+
 # Logs
 logs
 *.log

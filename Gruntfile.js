@@ -23,6 +23,4 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [ 'eslint', 'mochacli' ]);
 
-    grunt.registerTask('serve', ['watch']);
-
 };

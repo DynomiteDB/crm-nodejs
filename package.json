@@ -10,16 +10,26 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "bootswatch": "^3.3.6",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-dustjs": "^1.1.0",
     "construx-less": "^1.0.0",
     "dust-makara-helpers": "^4.1.2",
-    "eslint": "^1.10.3",
+    "eslint": "^2.9.0",
     "express": "^4.12.2",
-    "kraken-js": "^1.0.3",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-copy-to": "0.0.12",
+    "grunt-eslint": "^18.1.0",
+    "grunt-mocha-cli": "^2.1.0",
+    "kraken-js": "^2.1.0",
     "makara": "^2.0.3",
-    "redis": "^2.6.0-2"
+    "mocha": "^2.4.5",
+    "redis": "^2.6.0-2",
+    "supertest": "^1.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

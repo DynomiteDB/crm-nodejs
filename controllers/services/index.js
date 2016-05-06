@@ -1,6 +1,6 @@
 'use strict';
 
-var cache = require('../lib/cache');
+var cache = require('../../lib/cache');
 
 module.exports = function (router) {
 
@@ -18,7 +18,7 @@ module.exports = function (router) {
                 username = 'not found';
             }
 
-            res.render('website/index', {
+            res.render('website/services', {
                 name: 'index',
                 username: username
             });

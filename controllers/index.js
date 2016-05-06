@@ -1,18 +1,27 @@
 'use strict';
 
-var IndexModel = require('../models/index');
-
+var cache = require('../lib/cache');
 
 module.exports = function (router) {
 
-    var model = new IndexModel();
-
     router.get('/', function (req, res) {
-        
-        
-        res.render('index', model);
-        
-        
+
+        cache.get('name', function(err, reply) {
+            var username;
+
+            if (err) return err;
+
+            if (reply) {
+                username = reply;
+            } else {
+                username = 'not found';
+            }
+
+            res.render('index', {
+                name: 'index',
+                username: username
+            });
+        });
     });
 
 };

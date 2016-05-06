@@ -1,14 +1,14 @@
 {
 
-    
+
     "express": {
         "view cache": false,
         "view engine": "js",
         "views": "path:./.build/templates"
     },
-    
 
-    
+
+
     "view engines": {
         "js": {
             "module": "makara",
@@ -23,26 +23,35 @@
 
     "dust": {
         "helpers": [
-    
+
             "dust-makara-helpers"
-    
+
         ]
     },
-    
 
-    
+
+
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
     },
-    
+
+    "database": {
+        "host": "localhost",
+        "port": 8103
+    },
+
+    "cache": {
+        "host": "localhost",
+        "port": 6379
+    },
 
     "specialization": {
     },
 
     "middleware": {
 
-        
+
         "makara": {
             "priority": 100,
             "enabled": true,
@@ -56,7 +65,7 @@
                 ]
             }
         },
-        
+
 
         "static": {
             "module": {

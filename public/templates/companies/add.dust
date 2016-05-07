@@ -1,0 +1,77 @@
+{>"layouts/website-master" /}
+
+{<body}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Add company</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-horizontal" method="post" action="/companies/save">
+                <input type="hidden" name="_csrf" value="{_csrf}" />
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Company</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Company">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="website" class="col-sm-2 control-label">Website</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" id="website" name="website" placeholder="Website">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="revenue" class="col-sm-2 control-label">Revenue</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="revenue" name="revenue" placeholder="Revenue">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="step" class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="step" name="step">
+                            <option>Prospect</option>
+                            <option>Customer</option>
+                            <option>Partner</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="qualified"> Qualified
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{/body}

@@ -1,12 +1,12 @@
 {
-    
+
     "express": {
         "view cache": false,
         "view engine": "dust",
         "views": "path:./public/templates"
     },
 
-    
+
     "view engines": {
         "dust": {
             "module": "makara",
@@ -22,8 +22,8 @@
             }
         }
     },
-    
-    
+
+
 
     "middleware": {
 
@@ -36,23 +36,38 @@
                     "path:./public",
                     "path:./.build",
                     {
-                        
+
                         "template": {
                             "module": "construx-dustjs",
                             "files": "/templates/**/*.js",
                             "base": "templates"
                         },
-                        
-                        
+
+
                         "css": {
                             "module": "construx-less",
                             "files": "/css/**/*.css"
                         },
-                        
+
                         "copier": {
                             "module": "construx-copier",
                             "files": "**/*"
                         }
+                    }
+                ]
+            }
+        },
+
+        "appsec": {
+            "priority": 110,
+            "module": {
+                "name": "lusca",
+                "arguments": [
+                    {
+                        "csrf": true,
+                        "xframe": "SAMEORIGIN",
+                        "p3p": false,
+                        "csp": false
                     }
                 ]
             }

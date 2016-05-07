@@ -1,3 +1,10 @@
+# WORKING FILES
+create-page.sh
+public/css/bootstrap-org.css
+public/css/bootstrap-org.min.css
+public/js/contact_me.js
+public/js/jqBootstrapValidation.js
+
 # IDE
 .idea
 

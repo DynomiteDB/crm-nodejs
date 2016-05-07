@@ -1,0 +1,47 @@
+{>"layouts/website-master" /}
+
+{<body}
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>{name}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">Company</div>
+        <div class="col-xs-12 col-sm-10">{name}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">Phone</div>
+        <div class="col-xs-12 col-sm-10">{phone}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">Website</div>
+        <div class="col-xs-12 col-sm-10">{website}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">Revenue</div>
+        <div class="col-xs-12 col-sm-10">{revenue}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">Type</div>
+        <div class="col-xs-12 col-sm-10">{step}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">&nbsp</div>
+        <div class="col-xs-12 col-sm-10">
+            {#qualified}Qualified{:else}Not qualified{/qualified}
+        </div>
+    </div>
+
+</div>
+{/body}

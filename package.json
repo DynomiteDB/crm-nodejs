@@ -28,7 +28,9 @@
     "kraken-js": "^2.1.0",
     "makara": "^2.0.3",
     "mocha": "^2.4.5",
+    "murmurhash": "0.0.2",
     "redis": "^2.6.0-2",
+    "slug": "^0.9.1",
     "supertest": "^1.2.0"
   },
   "devDependencies": {

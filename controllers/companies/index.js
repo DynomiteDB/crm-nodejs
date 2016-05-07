@@ -3,10 +3,10 @@
 var cache = require('../../lib/cache');
 
 // Controllers
-var ctrlShowCompanyDetails = require('./ctrlShowCompanyDetails');
+var ctrlViewCompanyDetails = require('./ctrlViewCompanyDetails');
 var ctrlViewCompanies = require('./ctrlViewCompanies');
 
 module.exports = function(router) {
     router.get('/', ctrlViewCompanies);
-    router.get('/:slug', ctrlShowCompanyDetails);
+    router.get('/:slug', ctrlViewCompanyDetails);
 };

@@ -1,3 +1,8 @@
+/*
+    Database and cache calls are sequential in this file to facilitate learning.
+    However, a production implementation would use Rx or `async` to parallelize
+    the
+ */
 'use strict';
 
 var cache = require('../../lib/cache');
@@ -37,11 +42,44 @@ module.exports = function saveCompany(req, res) {
     );
 
     function saveToRecentCompanies(err, reply) {
-        if (err) {
-            // Production code would have logging, retry, etc.
-            console.log(err);
-        }
+        // Production code would have logging, retry, etc.
+        if (err) { console.log(err); }
 
-        res.render('companies/index', {});
+        cache.lpush(
+            murmurhash.v2('companies:recent'),
+            company.name,
+            saveToAlphabetical
+        );
+    }
+
+    function saveToAlphabetical(err, reply) {
+        // Production code would have logging, retry, etc.
+        if (err) { console.log(err); }
+
+        cache.zadd(
+            murmurhash.v2('companies:alphabetical'),
+            1,
+            company.name,
+            saveToRevenue
+        );
+    }
+
+    function saveToRevenue(err, reply) {
+        // Production code would have logging, retry, etc.
+        if (err) { console.log(err); }
+
+        cache.zadd(
+            murmurhash.v2('companies:revenue'),
+            company.revenue,
+            company.name,
+            renderNextPage
+        );
+    }
+
+    function renderNextPage(err, reply) {
+        // Production code would have logging, retry, etc.
+        if (err) { console.log(err); }
+
+        res.redirect('/companies?saved=' + encodeURI(company.name));
     }
 };

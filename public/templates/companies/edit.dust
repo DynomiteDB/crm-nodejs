@@ -15,6 +15,8 @@
             <form class="form-horizontal" method="post" action="/companies/save">
                 <input type="hidden" name="_csrf" value="{_csrf}" />
                 <input type="hidden" class="form-control" id="name" name="name" value="{name}">
+                <!-- TODO: Provide variations in how a new company vs an updated company are saved -->
+                <input type="checkbox" name="update" id="update" checked hidden style="display:none">
 
                 <div class="form-group">
                     <label for="phone" class="col-sm-2 control-label">Phone</label>
@@ -38,12 +40,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="step" class="col-sm-2 control-label">Type {@eq key=step value="Partner"}HI{/eq}</label>
+                    <label for="step" class="col-sm-2 control-label">Type</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="step" name="step">
-                            <option>Prospect {@eq key=step value="Partner"}HI{/eq}</option>
-                            <option>Customer {step}</option>
-                            <option>Partner</option>
+                            <option {@eq key=step value="Prospect"}selected{/eq}>Prospect</option>
+                            <option {@eq key=step value="Customer"}selected{/eq}>Customer</option>
+                            <option {@eq key=step value="Partner"}selected{/eq}>Partner</option>
                         </select>
                     </div>
                 </div>
@@ -52,7 +54,7 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="qualified"> Qualified
+                                <input type="checkbox" name="qualified" {#qualified}checked{/qualified}> Qualified
                             </label>
                         </div>
                     </div>

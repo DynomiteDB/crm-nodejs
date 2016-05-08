@@ -27,8 +27,6 @@ module.exports = function(req, res) {
             }
         }
 
-        console.log(reply);
-
         res.render('companies/edit', reply);
     }
 

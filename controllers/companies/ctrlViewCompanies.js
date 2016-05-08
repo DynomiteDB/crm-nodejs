@@ -1,33 +1,43 @@
 'use strict';
 
+var async = require('async');
 var cache = require('../../lib/cache');
+var key = require('../../lib/companyKey');
+var murmurhash = require('murmurhash');
 
 module.exports = function(req, res) {
 
-    cache.get('name', function(err, reply) {
-        var username;
+    // Get the first 10 companies sorted alphabetically
+    cache.zrange(murmurhash.v2('companies:alphabetical'), 0, 9, getCompaniesDetails);
 
-        // Switch to render a 503 page
-        if (err) console.log(err);
+    function getCompaniesDetails(err, reply) {
+        // Production code should have logging, retry, etc.
+        if (err) { console.log(err); }
+
+        var emptyResult = false;
 
         if (reply) {
-            username = reply;
+            async.map(reply, getDetails, displayCompanies);
         } else {
-            username = 'not found';
+            res.render('companies/index', {
+                noResults: true
+            });
         }
+    }
+
+    function getDetails(companyName, cb) {
+        cache.hgetall(key.getKeyHash(companyName), function(err, reply) {
+            if (err) { cb(err, {}); }
+            cb(null, reply)
+        });
+    }
+
+    function displayCompanies(err, results) {
+        if (err) { console.log(err) }
 
         res.render('companies/index', {
-            companies: [
-                {
-                    name: 'Macrosoft'
-                },
-                {
-                    name: 'Orange'
-                },
-                {
-                    name: 'Numbers'
-                }
-            ]
+            companies: results
         });
-    });
+    }
+
 };

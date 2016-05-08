@@ -1,5 +1,53 @@
 {>"layouts/website-master" /}
 
 {<body}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Companies
+                    <a href="/companies/add" class="btn btn-danger pull-right">Add company</a>
+                </h1>
+            </div>
+        </div>
+    </div>
 
+    <!-- TODO: if add, then show success message here -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Revenue</th>
+                    <th>Website</th>
+                    <th>Type</th>
+                    <th style="text-align: center;">Qualified</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#companies}
+                    <tr>
+                        <td><a href="/companies/{name}">{name}</a></td>
+                        <td>{phone}</td>
+                        <td>{revenue}</td>
+                        <td><a href="{website}">View website</a></td>
+                        <td>{step}</td>
+                        <td style="text-align: center;">
+                            {#qualified}
+                                <i class="fa fa-check-square-o text-success" aria-hidden="true"></i>
+                            {:else}
+                                <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
+                            {/qualified}
+                        </td>
+
+                    </tr>
+                {/companies}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {/body}}

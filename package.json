@@ -10,6 +10,7 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "async": "^2.0.0-rc.4",
     "bootswatch": "^3.3.6",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",

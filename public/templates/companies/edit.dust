@@ -1,0 +1,72 @@
+{>"layouts/website-master" /}
+
+{<body}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Edit {name}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-horizontal" method="post" action="/companies/save">
+                <input type="hidden" name="_csrf" value="{_csrf}" />
+                <input type="hidden" class="form-control" id="name" name="name" value="{name}">
+
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="{phone}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="website" class="col-sm-2 control-label">Website</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" id="website" name="website" placeholder="Website" value="{website}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="revenue" class="col-sm-2 control-label">Revenue</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="revenue" name="revenue" placeholder="Revenue" value="{revenue}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="step" class="col-sm-2 control-label">Type {@eq key=step value="Partner"}HI{/eq}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="step" name="step">
+                            <option>Prospect {@eq key=step value="Partner"}HI{/eq}</option>
+                            <option>Customer {step}</option>
+                            <option>Partner</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="qualified"> Qualified
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-danger">Update</button>
+                        <a href="/companies" style="padding-left: 11px;">Cancel</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{/body}

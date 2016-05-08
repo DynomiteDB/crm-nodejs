@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="page-header">
-                <h1>{name}</h1>
+                <h1>{name}
+                    <a href="/companies/{name}/edit" class="btn btn-danger pull-right">Edit</a>
+                </h1>
             </div>
         </div>
     </div>

@@ -54,8 +54,5 @@
     })
     </script>
 
-    <!-- TODO: In a production project livereload should be removed as part of
-         the build process -->
-    <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>

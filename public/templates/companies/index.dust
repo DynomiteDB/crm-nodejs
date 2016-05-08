@@ -4,6 +4,17 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
+            {#showSaved}
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Successfully saved <strong>{savedCompany}</strong>.
+            </div>
+            {/showSaved}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
             <div class="page-header">
                 <h1>Companies
                     <a href="/companies/add" class="btn btn-danger pull-right">Add company</a>
@@ -12,7 +23,11 @@
         </div>
     </div>
 
-    <!-- TODO: if add, then show success message here -->
+    <div class="row">
+        <div class="col-xs-12">
+            Sort: <a href="/companies?sort=revenue">Revenue</a> | <a href="/companies?sort=recent">Recent</a> | <a href="/companies?sort=az">A to Z</a>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-xs-12">
@@ -30,10 +45,10 @@
                 <tbody>
                 {#companies}
                     <tr>
-                        <td><a href="/companies/{name}">{name}</a></td>
+                        <td><a href="/companies/{slug}">{name}</a></td>
                         <td>{phone}</td>
                         <td>{revenue}</td>
-                        <td><a href="{website}">View website</a></td>
+                        <td><a href="{website}" target="_blank">View website</a></td>
                         <td>{step}</td>
                         <td style="text-align: center;">
                             {#qualified}
